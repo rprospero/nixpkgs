@@ -1,15 +1,15 @@
-{lib, fetchgit, gcc, python27}:
+{lib, fetchgit, gcc, python}:
 
 let
-  xhtml2pdf = import ./xhtml2pdf.nix;
-  html5 = import ./myHtml5.nix;
+  html5 = import ./myHtml5.nix {inherit python;};
+  xhtml2pdf = import ./xhtml2pdf.nix {inherit python html5;};
 in
 
-python27.pkgs.buildPythonApplication rec {
+python.pkgs.buildPythonApplication rec {
   name = "sasview-${version}";
   version = "4.1.2";
 
-  propagatedBuildInputs = with python27.pkgs; [
+  propagatedBuildInputs = with python.pkgs; [
     bumps
     gcc
     h5py
