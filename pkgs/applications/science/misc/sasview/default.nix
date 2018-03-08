@@ -2,7 +2,6 @@
 
 let
   sasmodels = import ./sasmodels.nix;
-  unittest-xml-reporting = import ./unittest-xml-reporting.nix;
   xhtml2pdf = import ./xhtml2pdf.nix;
   html5 = import ./myHtml5.nix;
 in
