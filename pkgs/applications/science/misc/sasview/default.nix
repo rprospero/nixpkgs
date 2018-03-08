@@ -1,7 +1,6 @@
 {lib, fetchgit, gcc, python27}:
 
 let
-  sasmodels = import ./sasmodels.nix;
   xhtml2pdf = import ./xhtml2pdf.nix;
   html5 = import ./myHtml5.nix;
 in
