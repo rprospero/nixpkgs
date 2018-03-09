@@ -17361,6 +17361,7 @@ in {
 
     propagatedBuildInputs = with self; [six];
 
+    # The tarball from Pypi doesn't actually contain the unit tests
     doCheck = false;
 
     src = fetchPypi {
