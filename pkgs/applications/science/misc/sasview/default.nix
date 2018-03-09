@@ -33,8 +33,6 @@ python.pkgs.buildPythonApplication rec {
     wxPython
     xhtml2pdf];
 
-  doCheck = false;
-
   src = fetchgit {
     url = "https://github.com/SasView/sasview.git";
     rev = "v${version}";
