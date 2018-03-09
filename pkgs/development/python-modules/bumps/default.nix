@@ -7,6 +7,8 @@ buildPythonPackage rec {
 
   propagatedBuildInputs = [six];
 
+  # Bumps does nto provide its own tests.py, so the test
+  # always fails
   doCheck = false;
 
   src = fetchPypi {
