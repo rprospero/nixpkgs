@@ -1,12 +1,12 @@
-{fetchgit, licenses, buildPythonPackage, pytest, numpy, scipy}:
+{fetchgit, licenses, buildPythonPackage, pytest, numpy, scipy, matplotlib, docutils}:
 
 buildPythonPackage rec {
   name = "sasmodels-${version}";
   version = "0.96";
 
-  propagatedBuildInputs = [pytest numpy scipy];
+  propagatedBuildInputs = [docutils matplotlib numpy pytest scipy];
 
-  doCheck = false;
+  preCheck = ''export HOME=$(mktemp -d)'';
 
   src = fetchgit {
     url = "https://github.com/SasView/sasmodels.git";
